@@ -6,7 +6,7 @@
 <meta property="og:description" content="承诺方案        研究问题：两个人打电话玩抛硬币，A抛硬币，B猜正反。B猜正面，A说答案是反面。 问题分析：B不确定A是不是真的反面。如何通过电话来保证抛硬币的公平性？">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-15T06:27:14.000Z">
-<meta property="article:modified_time" content="2021-09-04T15:16:54.250Z">
+<meta property="article:modified_time" content="2021-09-04T15:37:32.690Z">
 <meta property="article:author" content="Cherry">
 <meta property="article:tag" content="密码学">
 <meta name="twitter:card" content="summary"><title>高级密码学 | Cherry</title><link ref="canonical" href="https://asuka-cherry.github.io/2021/07/15/%E9%AB%98%E7%BA%A7%E5%AF%86%E7%A0%81%E5%AD%A6/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
@@ -264,9 +264,6 @@ window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>d</mi><mi>v</mi><mo>=</mo><mi mathvariant="normal">∣</mi><mi>P</mi><mi>r</mi><mo stretchy="false">[</mo><mi>δ</mi><mo mathvariant="normal">′</mo><mo>=</mo><mi>δ</mi><mo stretchy="false">]</mo><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">Adv=|Pr[\delta\prime=\delta]-1/2|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="mord">′</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord">2</span><span class="mord">∣</span></span></span></span></li>
 </ol>
 </blockquote>
-<ul>
-<li>攻击方法暂时不知（这里的攻击方法不是选择明文攻击，而是比如修改明文攻击导致IND-CPA不安全的方法）</li>
-</ul>
 </li>
 <li>
 <p>三种构造法是如何做到隐藏和绑定的，如果做不到，又是为什么？</p>
@@ -277,10 +274,11 @@ window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
 <li>绑定：抗碰撞的hash能保证绑定性</li>
 </ul>
 </li>
-<li>公钥加密方案（对公钥加密方案而言，隐藏性对应方法1，绑定性对应方法2）
+<li>公钥加密方案
 <ul>
-<li>隐藏：当接收方没有私钥的时候，不可能解得出x；但如果加密算法仅是IND-CPA安全的，则可能通过修改明文攻击导致sender deniable</li>
-<li>绑定：当一个公钥对应多个私钥时，则会导致reciever deniable</li>
+<li>隐藏：当接收方没有私钥的时候，不可能解得出x；</li>
+<li>绑定： 如果加密算法仅是IND-CPA安全的，则可能通过修改明文攻击导致sender deniable;<br />
+当一个公钥对应多个私钥时，则会导致reciever deniable;</li>
 </ul>
 </li>
 <li>Pederson Commitment
